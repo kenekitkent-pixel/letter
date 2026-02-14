@@ -1,48 +1,47 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Valentine Letter · For Friends</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine Letter · For Friends</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Garamond font -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <!-- Envelope Screen (click to open) -->
-    <div id="envelope-container">
-      <img src="envelope.png" alt="Envelope" id="envelope" />
-      <p>♡ Letter for You ♡</p>
-    </div>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
 
-    <!-- Letter Screen (hidden until envelope click) -->
-    <div id="letter-container">
-      <div class="letter-window">
-        <!-- Login form (shown first) -->
-        <div id="login-form" class="login-form">
-          <h2>who's this?</h2>
-          <input type="text" id="name-input" placeholder="your name" />
-          <input type="password" id="code-input" placeholder="secret code" />
-          <button id="login-btn">open letter</button>
-          <p id="login-error" class="error-message"></p>
-        </div>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Envelope Screen (click to open) -->
+  <div id="envelope-container">
+    <img src="envelope.png" alt="Envelope" id="envelope" />
+    <p>♡ Letter for You ♡</p>
+  </div>
 
-        <!-- Personalized content (hidden until login success) -->
-        <div id="personal-content" style="display: none;">
-          <h1 id="personal-title"></h1>
-          <img src="cat_heart.gif" class="cat" id="personal-cat" />
-          <div id="personal-message" class="message-text"></div>
-        </div>
+  <!-- Letter Screen (hidden until envelope click) -->
+  <div id="letter-container">
+    <div class="letter-window">
+      <!-- Login form (shown first) -->
+      <div id="login-form" class="login-form">
+        <h2>who's this?</h2>
+        <input type="text" id="name-input" placeholder="your name" />
+        <input type="password" id="code-input" placeholder="secret code" />
+        <button id="login-btn">open letter</button>
+        <p id="login-error" class="error-message"></p>
+      </div>
+
+      <!-- Personalized content (hidden until login success) -->
+      <div id="personal-content" style="display: none;">
+        <h1 id="personal-title"></h1>
+        <img src="cat_heart.gif" alt="Cute cat" class="cat" id="personal-cat" />
+        <div id="personal-message" class="message-text"></div>
       </div>
     </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
