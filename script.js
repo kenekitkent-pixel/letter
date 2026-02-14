@@ -5,7 +5,7 @@ const users = {
   Akira: {
     code: "676767",
     bg: "https://i.pinimg.com/736x/da/92/72/da9272ae43b8157755d1d4fd5db3d3d4.jpg",
-    message: `For you're the constant in a shifting scene,\nThe one who stayed, through all the in-between.\nWhile other ships sailed off on different tides,\nYou've anchored fast, right here, by my side.\n\nI know our souls don't perfectly align,\nLike oil and water, or a different design.\nBut that's the wonder, the unlikely art,\nNot chance, but God, who chose to join our heart.\nFor this I'm thankful, every single day,\nHe placed me with you, along the way.\n\nI may not give the finest gifts or grandest things,\nNo lavish praise that such a friendship brings.\nBut this I offer, and it's truly true,\nYou're in my prayers each night, a space for you.\n\nI wish for you a future, bright and vast,\nSuccess that holds you steady, unsurpassed.\nAnd when life's storms gather, dark and steep,\nMay you find the strength to climb, and not to weep.\n\nSo thank you, for the friend you've been to me,\nA simple truth, that sets my spirit free.`
+    message: `You're the constant in a shifting scene,\nThe one who stayed, through all the in-between.\nWhile other ships sailed off on different tides,\nYou've anchored fast, right here, by my side.\n\nI know our souls don't perfectly align,\nLike oil and water, or a different design.\nBut that's the wonder, the unlikely art,\nNot chance, but God, who chose to join our heart.\nFor this I'm thankful, every single day,\nHe placed me with you, along the way.\n\nI may not give the finest gifts or grandest things,\nNo lavish praise that such a friendship brings.\nBut this I offer, and it's truly true,\nYou're in my prayers each night, a space for you.\n\nI wish for you a future, bright and vast,\nSuccess that holds you steady, unsurpassed.\nAnd when life's storms gather, dark and steep,\nMay you find the strength to climb, and not to weep.\n\nSo thank you, for the friend you've been to me,\nA simple truth, that sets my spirit free.`
   },
   Jessa: {
     code: "121314",
@@ -87,4 +87,5 @@ envelopeContainer.addEventListener('click', () => {
     letterWindow.classList.add('open');
   }, 20);
 });
+
 
