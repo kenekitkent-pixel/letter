@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("heart-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Pixelify Sans", sans-serif;
+  transition: background-image 0.5s ease;
+}
+
+/* Envelope */
+#envelope-container {
+  text-align: center;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#envelope {
+  width: 200px;
+  animation: pulse 1.5s infinite;
+  cursor: pointer;
+}
+
+/* Letter container (overlay) */
+#letter-container {
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter-window {
+  width: 90vw;
+  max-width: 800px;
+  aspect-ratio: 3 / 2;
+  padding: 20px 20px 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background-image: url("window.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
+  gap: 5px;
+  /* Adjust top padding based on screen size */
+  padding-top: min(140px, 18vh);
+
+  transform: scale(1.2);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.letter-window.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Login form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 80%;
+  max-width: 300px;
+  background-color: rgba(255, 240, 240, 0.6);
+  padding: 25px 20px;
+  border-radius: 24px;
+  backdrop-filter: blur(2px);
+}
+
+.login-form h2 {
+  font-size: 28px;
+  margin: 0 0 5px;
+  color: #3d2b1f;
+}
+
+.login-form input {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 18px;
+  padding: 8px 12px;
+  width: 100%;
+  border: 2px solid #ffb6c1;
+  border-radius: 30px;
+  outline: none;
+  text-align: center;
+  background-color: #fff0f5;
+}
+
+.login-form button {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 22px;
+  background-color: #ff8da1;
+  border: none;
+  border-radius: 40px;
+  padding: 8px 25px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 0 #b3445c;
+  transition: 0.1s ease;
+}
+
+.login-form button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.error-message {
+  color: #c04141;
+  font-size: 18px;
+  margin: 0;
+  min-height: 24px;
+}
+
+/* Personalized content */
+#personal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;            /* fill parent */
+  overflow: hidden;        /* prevent overall scroll */
+}
+
+#personal-title {
+  font-size: clamp(24px, 5vw, 36px);
+  margin: 5px 0 5px;
+  color: #2e1b0f;
+  flex-shrink: 0;
+}
+
+.cat {
+  width: clamp(120px, 20vw, 180px);
+  margin: 5px 0;
+  flex-shrink: 0;
+}
+
+/* Message text - scrollable, Garamond, responsive */
+.message-text {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(14px, 3.5vw, 18px);
+  line-height: 1.5;
+  text-align: left;
+  width: 90%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
+  padding: 12px 18px;
+  border-radius: 20px;
+  margin: 5px 0 10px;
+  white-space: pre-line;
+  color: #1e1e1e;
+  border: 2px solid white;
+  overflow-y: auto;
+  flex: 1 1 auto;          /* grow and shrink */
+  min-height: 0;           /* important for flex child to respect overflow */
+  max-height: none;        /* remove fixed max-height */
+}
+
+/* Theme accent borders */
+body[data-theme="blue"] .message-text {
+  border-color: #6ca0dc;
+  background-color: rgba(225, 240, 255, 0.7);
+}
+body[data-theme="purple"] .message-text {
+  border-color: #c77dff;
+  background-color: rgba(240, 230, 255, 0.7);
+}
+body[data-theme="red"] .message-text {
+  border-color: #ff7b7b;
+  background-color: rgba(255, 225, 225, 0.7);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .letter-window {
+    padding-top: 100px;    /* less top space on small screens */
+    gap: 2px;
+  }
+
+  #personal-title {
+    font-size: 22px;
+  }
+
+  .cat {
+    width: 100px;
+  }
+
+  .message-text {
+    font-size: 14px;
+    padding: 10px 12px;
+    width: 95%;
+  }
+}
