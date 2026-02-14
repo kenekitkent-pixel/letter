@@ -1,9 +1,9 @@
-// ---------- User data ----------
+// ---------- User data ----------// ---------- User data ----------
 const users = {
   Akira: {
     code: "676767",
     color: "blue",
-    bg: "https://i.pinimg.com/736x/da/92/72/da9272ae43b8157755d1d4fd5db3d3d4.jpg", // portrait
+    bg: "https://i.pinimg.com/736x/da/92/72/da9272ae43b8157755d1d4fd5db3d3d4.jpg",
     message: `These hands, not often pen to paper trained,
 Have traced these lines, a sentiment sustained.
 With every clumsy stroke, a quiet care,
@@ -37,7 +37,7 @@ A simple truth, that sets my spirit free.`
   Jessa: {
     code: "121314",
     color: "purple",
-    bg: "https://i.pinimg.com/736x/2f/92/e3/2f92e3fee607257f37b3d9c886c174a1.jpg", // portrait
+    bg: "https://i.pinimg.com/736x/2f/92/e3/2f92e3fee607257f37b3d9c886c174a1.jpg",
     message: `Hi Jessa Mae Englatera, ang tao nga never pa nangusi. The random hits and pinches moments that somehow became a normal part of our friendship. And honestly, there's something about our interactions that always ends up funny to me. Wala lang, murag lingaw lang gyud kaayo sige'g pang rage bait ninyo.
 
 We both know we're like cats and dogs sometimes, but I never take it seriously. I see it as your friendly love for me — your own way of showing you care.
@@ -49,7 +49,7 @@ Pero bitaw oie. I may not always give the best as your friend, but the best thin
   Felicity: {
     code: "232425",
     color: "red",
-    bg: "https://i.pinimg.com/736x/b4/97/09/b49709b86eb85b194f6d69c0c9e30d3d.jpg", // portrait
+    bg: "https://i.pinimg.com/736x/b4/97/09/b49709b86eb85b194f6d69c0c9e30d3d.jpg",
     message: `Thank you for the way you step aside
 When conversations drift to lows of pride.
 You never bite the bait, you never feed
@@ -117,7 +117,8 @@ function resetToLogin() {
   document.body.style.backgroundImage = "url('heart-bg.jpg')";
   document.body.removeAttribute("data-theme");
 
-  // Cat image back to heart (will be visible only after login)
+  // Show the cat again (heart version) for the next person
+  personalCat.style.display = "";
   personalCat.src = "cat_heart.gif";
 }
 
@@ -169,7 +170,9 @@ loginBtn.addEventListener("click", (e) => {
   // Customize personal content
   personalTitle.textContent = `For ${matchedKey}`;
   personalMessage.innerHTML = user.message.replace(/\n/g, "<br>");
-  personalCat.src = "cat_dance.gif"; // happy dance!
+
+  // 🚫 Hide the cat GIF so the message has more room
+  personalCat.style.display = "none";
 
   // Hide login, show personal
   loginFormDiv.style.display = "none";
@@ -183,4 +186,5 @@ loginBtn.addEventListener("click", (e) => {
       loginBtn.click();
     }
   });
+});
 });
