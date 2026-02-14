@@ -1,4 +1,4 @@
-body {body {
+body {
   margin: 0;
   height: 100vh;
   display: flex;
@@ -18,15 +18,9 @@ body {body {
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 #envelope {
@@ -48,7 +42,7 @@ body {body {
   width: 90vw;
   max-width: 800px;
   aspect-ratio: 3 / 2;
-  padding: 20px 20px 15px 20px;
+  padding: 20px 20px 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -141,7 +135,7 @@ body {body {
 
 #personal-title {
   font-size: clamp(24px, 5vw, 36px);
-  margin: 5px 0 5px;
+  margin: 5px 0;
   color: #2e1b0f;
   flex-shrink: 0;
 }
@@ -208,5 +202,4 @@ body[data-theme="red"] .message-text {
     padding: 10px 12px;
     width: 95%;
   }
-}
 }
