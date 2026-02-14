@@ -1,20 +1,99 @@
+/* style.css */
 body {
   margin: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("heart-bg.jpg");
+  background-image: url("heart-bg.jpg"); /* fallback, replaced per user */
   background-size: cover;
   background-position: center;
   font-family: "Pixelify Sans", sans-serif;
-  transition: background-image 0.5s ease;
+  transition: background-image 0.4s ease;
 }
 
-/* Envelope */
+/* LOGIN SCREEN */
+#login-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(3px);
+  z-index: 20;
+}
+
+.login-box {
+  background: rgba(255, 240, 245, 0.9);
+  padding: 2.5rem 2rem;
+  border-radius: 60px 20px 60px 20px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 280px;
+  border: 3px solid white;
+}
+
+.login-box h2 {
+  font-size: 2rem;
+  margin: 0 0 1.5rem;
+  color: #b14b6c;
+  letter-spacing: 2px;
+}
+
+.login-box input {
+  display: block;
+  width: 80%;
+  margin: 0.8rem auto;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: 2px solid #ffb3c6;
+  border-radius: 40px;
+  outline: none;
+  background: white;
+  text-align: center;
+}
+
+.login-box input:focus {
+  border-color: #ff6f91;
+}
+
+#login-btn {
+  background: #ff8fab;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 30px;
+  margin: 20px 0 10px;
+  border-radius: 50px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 5px 0 #b14b6c;
+}
+
+#login-btn:active {
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
+#login-error {
+  color: #c41e3a;
+  font-size: 1.1rem;
+  margin: 0;
+  display: none;
+  background: #ffe3e3;
+  padding: 5px;
+  border-radius: 30px;
+}
+
+/* ENVELOPE */
 #envelope-container {
   text-align: center;
   cursor: pointer;
+  display: none;
+  z-index: 10;
 }
 
 @keyframes pulse {
@@ -25,40 +104,48 @@ body {
 
 #envelope {
   width: 200px;
-  animation: pulse 1.5s infinite;
-  cursor: pointer;
+  animation: pulse 1.8s infinite;
+  filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
 }
 
-/* Letter container (overlay) */
+#envelope-container p {
+  font-size: 2rem;
+  margin: 0.2rem 0 0;
+  color: #fff9f0;
+  text-shadow: 2px 2px 0 #d64b6b;
+}
+
+/* LETTER CONTAINER */
 #letter-container {
   display: none;
   position: fixed;
   inset: 0;
   justify-content: center;
   align-items: center;
+  z-index: 15;
 }
 
+/* letter-window: no background card, just spacing */
 .letter-window {
-  width: 90vw;
-  max-width: 800px;
-  aspect-ratio: 3 / 2;
-  padding: 20px 20px 15px;
+  width: 85vw;
+  max-width: 850px;
+  aspect-ratio: 3/2;
+  padding: 30px 30px 20px 30px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url("window.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 12px;
-  gap: 5px;
-  padding-top: min(140px, 18vh);
+
+  /* 🚫 all card backgrounds removed */
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
 
   transform: scale(1.2);
   opacity: 0;
-  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .letter-window.open {
@@ -66,140 +153,55 @@ body {
   opacity: 1;
 }
 
-/* Login form */
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  width: 80%;
-  max-width: 300px;
-  background-color: rgba(255, 240, 240, 0.6);
-  padding: 25px 20px;
-  border-radius: 24px;
-  backdrop-filter: blur(2px);
-}
-
-.login-form h2 {
-  font-size: 28px;
+/* title – readable on any background */
+h1 {
+  font-size: 2.8rem;
   margin: 0 0 5px;
-  color: #3d2b1f;
-}
-
-.login-form input {
-  font-family: "Pixelify Sans", sans-serif;
-  font-size: 18px;
-  padding: 8px 12px;
-  width: 100%;
-  border: 2px solid #ffb6c1;
-  border-radius: 30px;
-  outline: none;
-  text-align: center;
-  background-color: #fff0f5;
-}
-
-.login-form button {
-  font-family: "Pixelify Sans", sans-serif;
-  font-size: 22px;
-  background-color: #ff8da1;
-  border: none;
-  border-radius: 40px;
-  padding: 8px 25px;
-  cursor: pointer;
   color: white;
-  box-shadow: 0 4px 0 #b3445c;
-  transition: 0.1s ease;
+  text-shadow: 3px 3px 0 #00000080, 0 0 10px black;
+  background: rgba(0, 0, 0, 0.3);  /* very subtle dark wash */
+  padding: 0.2rem 1.8rem;
+  border-radius: 60px;
+  display: inline-block;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
-.login-form button:active {
-  transform: translateY(4px);
-  box-shadow: none;
-}
-
-.error-message {
-  color: #c04141;
-  font-size: 18px;
-  margin: 0;
-  min-height: 24px;
-}
-
-/* Personalized content */
-#personal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#personal-title {
-  font-size: clamp(24px, 5vw, 36px);
-  margin: 5px 0;
-  color: #2e1b0f;
-  flex-shrink: 0;
-}
-
+/* cat gif – no extra background */
 .cat {
-  width: clamp(120px, 20vw, 180px);
+  width: 170px;
   margin: 5px 0;
-  flex-shrink: 0;
+  border-radius: 100px;
+  background: transparent !important;  /* remove any background */
+  padding: 0;  /* remove padding */
 }
 
-/* Message text - scrollable, Garamond, responsive */
+/* message text – semi-transparent dark for readability */
 .message-text {
-  font-family: "EB Garamond", serif;
-  font-size: clamp(14px, 3.5vw, 18px);
+  font-size: 1rem;
   line-height: 1.5;
   text-align: left;
-  width: 90%;
-  max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(2px);
-  padding: 12px 18px;
-  border-radius: 20px;
-  margin: 5px 0 10px;
-  white-space: pre-line;
-  color: #1e1e1e;
-  border: 2px solid white;
+  color: white;
+  text-shadow: 2px 2px 0 #00000060;
+  background: rgba(0, 0, 0, 0.4);  /* dark, lets bg show through */
+  backdrop-filter: blur(3px);
+  padding: 1.2rem 1.8rem !important;
+  border-radius: 30px 12px 30px 12px !important;
+  max-width: 80%;
+  max-height: 200px;
   overflow-y: auto;
-  flex: 1 1 auto;
-  min-height: 0;
-  max-height: none;
+  margin: 8px 0 5px;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border: 1px solid rgba(255,255,240,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Theme accent borders */
-body[data-theme="blue"] .message-text {
-  border-color: #6ca0dc;
-  background-color: rgba(225, 240, 255, 0.7);
+.message-text::-webkit-scrollbar {
+  width: 8px;
 }
-body[data-theme="purple"] .message-text {
-  border-color: #c77dff;
-  background-color: rgba(240, 230, 255, 0.7);
-}
-body[data-theme="red"] .message-text {
-  border-color: #ff7b7b;
-  background-color: rgba(255, 225, 225, 0.7);
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 600px) {
-  .letter-window {
-    padding-top: 100px;
-    gap: 2px;
-  }
-
-  #personal-title {
-    font-size: 22px;
-  }
-
-  .cat {
-    width: 100px;
-  }
-
-  .message-text {
-    font-size: 14px;
-    padding: 10px 12px;
-    width: 95%;
-  }
+.message-text::-webkit-scrollbar-thumb {
+  background: #ffb3c6;
+  border-radius: 20px;
 }
