@@ -1,4 +1,4 @@
-// ---------- User data ----------// ---------- User data ----------
+// User data
 const users = {
   Akira: {
     code: "676767",
@@ -87,7 +87,7 @@ Thank you, Felicity, for being simply... thee.`
   }
 };
 
-// ---------- DOM elements ----------
+// DOM elements
 const envelopeContainer = document.getElementById("envelope-container");
 const letterContainer = document.getElementById("letter-container");
 const letterWindow = document.querySelector(".letter-window");
@@ -102,48 +102,40 @@ const personalTitle = document.getElementById("personal-title");
 const personalCat = document.getElementById("personal-cat");
 const personalMessage = document.getElementById("personal-message");
 
-// ---------- Helper: reset to login view ----------
+// Reset to login view
 function resetToLogin() {
-  // Show login, hide personal
   loginFormDiv.style.display = "flex";
   personalDiv.style.display = "none";
 
-  // Clear inputs and error
   nameInput.value = "";
   codeInput.value = "";
   errorMsg.textContent = "";
 
-  // Reset body background to default (heart-bg)
   document.body.style.backgroundImage = "url('heart-bg.jpg')";
   document.body.removeAttribute("data-theme");
 
-  // Show the cat again (heart version) for the next person
+  // Show cat again (heart version)
   personalCat.style.display = "";
   personalCat.src = "cat_heart.gif";
 }
 
-// ---------- Envelope click: open letter window ----------
+// Envelope click
 envelopeContainer.addEventListener("click", () => {
   envelopeContainer.style.display = "none";
   letterContainer.style.display = "flex";
-
-  // Reset to login view every time envelope is opened
   resetToLogin();
-
-  // Trigger open animation
   setTimeout(() => {
     letterWindow.classList.add("open");
   }, 50);
 });
 
-// ---------- Login validation ----------
+// Login validation
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   const enteredName = nameInput.value.trim();
   const enteredCode = codeInput.value.trim();
 
-  // Case‑insensitive lookup
   const matchedKey = Object.keys(users).find(
     (key) => key.toLowerCase() === enteredName.toLowerCase()
   );
@@ -160,31 +152,26 @@ loginBtn.addEventListener("click", (e) => {
     return;
   }
 
-  // ---------- Success! ----------
+  // Success
   errorMsg.textContent = "";
-
-  // Apply user's background and theme attribute
   document.body.style.backgroundImage = `url('${user.bg}')`;
   document.body.setAttribute("data-theme", user.color);
 
-  // Customize personal content
   personalTitle.textContent = `For ${matchedKey}`;
   personalMessage.innerHTML = user.message.replace(/\n/g, "<br>");
 
-  // 🚫 Hide the cat GIF so the message has more room
+  // Hide the cat so message has more room
   personalCat.style.display = "none";
 
-  // Hide login, show personal
   loginFormDiv.style.display = "none";
   personalDiv.style.display = "flex";
 });
 
-// ---------- Optional: allow pressing Enter in inputs ----------
+// Press Enter in inputs to trigger login
 [nameInput, codeInput].forEach((input) => {
   input.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
       loginBtn.click();
     }
   });
-});
 });
