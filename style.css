@@ -1,207 +1,93 @@
-/* style.css */
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("heart-bg.jpg"); /* fallback, replaced per user */
-  background-size: cover;
-  background-position: center;
-  font-family: "Pixelify Sans", sans-serif;
-  transition: background-image 0.4s ease;
-}
+// script.js
 
-/* LOGIN SCREEN */
-#login-container {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(3px);
-  z-index: 20;
-}
+// ---------- USER DATA ----------
+const users = {
+  Akira: {
+    code: "676767",
+    bg: "https://i.pinimg.com/736x/da/92/72/da9272ae43b8157755d1d4fd5db3d3d4.jpg",
+    message: `You're the constant in a shifting scene,\nThe one who stayed, through all the in-between.\nWhile other ships sailed off on different tides,\nYou've anchored fast, right here, by my side.\n\nI know our souls don't perfectly align,\nLike oil and water, or a different design.\nBut that's the wonder, the unlikely art,\nNot chance, but God, who chose to join our heart.\nFor this I'm thankful, every single day,\nHe placed me with you, along the way.\n\nI may not give the finest gifts or grandest things,\nNo lavish praise that such a friendship brings.\nBut this I offer, and it's truly true,\nYou're in my prayers each night, a space for you.\n\nI wish for you a future, bright and vast,\nSuccess that holds you steady, unsurpassed.\nAnd when life's storms gather, dark and steep,\nMay you find the strength to climb, and not to weep.\n\nSo thank you, for the friend you've been to me,\nA simple truth, that sets my spirit free.`
+  },
+  Jessa: {
+    code: "121314",
+    bg: "https://i.pinimg.com/736x/2f/92/e3/2f92e3fee607257f37b3d9c886c174a1.jpg",
+    message: `Hi Jessa Mae Englatera, ang tao nga never pa nangusi.\nThe random hits and pinches moments that somehow became a normal part of our friendship.\nAnd honestly, there’s something about our interactions that always ends up funny to me.\nWala lang, murag lingaw lang gyud kaayo sige'g pang ragebait ninyo.\n\nWe both know we’re like cats and dogs sometimes,\nbut I never take it seriously. I see it as your friendly love for me —\nyour own way of showing you care.\n\nI know I have shortcomings as your friend,\npero ayaw kabalaka kay palitan ra tika’g purple nga jeep kung madato ko. HAHAHA.\n\nPero bitaw oie. I may not always give the best as your friend,\nbut the best thing I can offer is that you are always part of my nightly prayers.\nI may look basher nimo sometimes, but truthfully,\nI’m excited to see you succeed in the future and I'm proud nimo jessa.\nThank you for being a good friend to me.`
+  },
+  Felicity: {
+    code: "232425",
+    bg: "https://i.pinimg.com/736x/b4/97/09/b49709b86eb85b194f6d69c0c9e30d3d.jpg",
+    message: `The smart that you conceal,\nThe brightness you refuse to oversell.\nYou wear it lightly, like it's nothing much,\nBut those who listen know your mind is such\nA gift—not forced, not flaunted, just there, still.\nAnd somehow that's what makes it more brilliant.\n\nThank you for the way you step aside\nWhen conversations drift to lows of pride.\nYou never bite the bait, you never feed\nThe hungry talk that other mouths might need.\nThat silence of yours? It speaks so loud—\nA quiet soul among a noisy crowd.\n\nBut here's the thanks that settles in my chest:\nYou've stayed. Through everything, you've stayed and blessed\nThis friendship with a presence so secure,\nA steady hand, a heart that stays demure.\nYou show respect like breathing—natural, free,\nThe kind that makes each person feel they're worthy to be seen.\n\nI met your parents once, and understood\nWhy kindness grows in you the way it should.\nNo surprise there—their warmth was simply you,\nReflected back in everything you do.\nThey raised you well, Felicity, and how—\nTheir love wears your face now.\n\nSo here's my simple prayer for all your days:\nMay God bless every exam, every grade,\nMay you succeed in ways that make you proud,\nYet still be you—the same, above the crowd.\nI'm proud of you. I'll always be.\nThank you, Felicity, for being simply... thee.`
+  },
+  // UPDATED USER: Bling (password & background changed)
+  Bling: {
+    code: "120907",  // updated
+    bg: "https://i.pinimg.com/736x/71/ed/cf/71edcfeecbd31f973cb6267ee52dd701.jpg",  // updated
+    message: `Hii Bling!! I don't even know if I have the right to call you that nickname but anyways(😆😆) I am writing this letter because I heard that you wanted a reply? I initially wanted to reply to your letter earlier but your letter was so well-thought-out that I didn't know how to reply right away. I also clung unto your words that you were not expecting anything in return but that is not a reason for me to ignore or leave your words unacknowledged. \nBeyond that, I am truly grateful for everything you said and wrote. It honestly uplifted me, a lot. It came at the right time talaga, especially as I was questioning my abilities and myself as a person at that time. Truly, God always listens to our silent cries for help.\nI am really touched that you noticed things about me that I often overlook. I may not be able to express my gratitude perfectly without missing any details and this is honestly really giving me second-hand embarrassment at this point🫩 but I hope you understand what I am blabbering about.😭\nI've always genuinely seen and treated you as a friend(ky feeling close mn emz) and I've always wanted to be your friend. You have the nature that brings comfort to people and your humor(though dark and sometimes di na masabtan) still manages to lighten someone's mood. But seriously, I see you as someone I can trust, even with my deepest secrets. You seem like the kind of person who is fun and easy to be with, and someone who carries a quiet kind of wisdom in life.\n\nAlso, I am not really surprised that you know that I am aware of your "admiration" as I am not good at hiding it either. But more than anything, I am really thankful for the thought and effort you put into your gift. Your words were very tumpak, like they hit right on the bullseye. It was exactly what I needed at that moment, and to be honest, your letter really helped me to keep going. The flower was also so well-thought out. When you gave them to me, the first thing I noticed was the color it really stood out to me😭. I've always wondered what it would feel like to receive a bouquet of flowers, and broo....it really honestly made me tear up. Especially when I heard about the story behind how you planned everything like grabe, like a big applause to you fr. Honestly, I still can't believe that I am worthy of receiving something that thoughtful. It really meant a lot to me, more than I can fully put into words🥹🥹.\n\nAnd I guess because of that, I've come to appreciate you even more and the kind of person you are. I sincerely hope that we continue being good friends, especially now that we are taking different paths in life. \nThank you so much and have a blessed day!`
+  }
+};
 
-.login-box {
-  background: rgba(255, 240, 245, 0.9);
-  padding: 2.5rem 2rem;
-  border-radius: 60px 20px 60px 20px;
-  box-shadow: 0 20px 30px rgba(0,0,0,0.1);
-  text-align: center;
-  width: 280px;
-  border: 3px solid white;
-}
+// ---------- DOM elements (unchanged) ----------
+const loginContainer = document.getElementById('login-container');
+const envelopeContainer = document.getElementById('envelope-container');
+const letterContainer = document.getElementById('letter-container');
+const letterWindow = document.querySelector('.letter-window');
+const envelopeImg = document.getElementById('envelope');
 
-.login-box h2 {
-  font-size: 2rem;
-  margin: 0 0 1.5rem;
-  color: #b14b6c;
-  letter-spacing: 2px;
-}
+const loginName = document.getElementById('login-name');
+const loginCode = document.getElementById('login-code');
+const loginBtn = document.getElementById('login-btn');
+const loginError = document.getElementById('login-error');
 
-.login-box input {
-  display: block;
-  width: 80%;
-  margin: 0.8rem auto;
-  padding: 12px 16px;
-  font-family: inherit;
-  font-size: 1.2rem;
-  border: 2px solid #ffb3c6;
-  border-radius: 40px;
-  outline: none;
-  background: white;
-  text-align: center;
-}
+const letterTitle = document.getElementById('letter-title');
+const catImg = document.getElementById('letter-cat');
+const messageDiv = document.getElementById('message-text');
 
-.login-box input:focus {
-  border-color: #ff6f91;
-}
+let currentUser = null;
 
-#login-btn {
-  background: #ff8fab;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  padding: 10px 30px;
-  margin: 20px 0 10px;
-  border-radius: 50px;
-  font-family: inherit;
-  cursor: pointer;
-  transition: 0.2s;
-  box-shadow: 0 5px 0 #b14b6c;
-}
+// ---------- LOGIN handler ----------
+loginBtn.addEventListener('click', () => {
+  const nameInput = loginName.value.trim();
+  const codeInput = loginCode.value.trim();
 
-#login-btn:active {
-  transform: translateY(5px);
-  box-shadow: none;
-}
+  if (users.hasOwnProperty(nameInput) && users[nameInput].code === codeInput) {
+    loginError.style.display = 'none';
+    currentUser = nameInput;
 
-#login-error {
-  color: #c41e3a;
-  font-size: 1.1rem;
-  margin: 0;
-  display: none;
-  background: #ffe3e3;
-  padding: 5px;
-  border-radius: 30px;
-}
+    document.body.style.backgroundImage = `url('${users[nameInput].bg}')`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
 
-/* ENVELOPE */
-#envelope-container {
-  text-align: center;
-  cursor: pointer;
-  display: none;
-  z-index: 10;
-}
+    loginContainer.style.display = 'none';
+    envelopeContainer.style.display = 'block';
+  } else {
+    loginError.style.display = 'block';
+  }
+});
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
+[loginName, loginCode].forEach(input => {
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') loginBtn.click();
+  });
+});
 
-#envelope {
-  width: 200px;
-  animation: pulse 1.8s infinite;
-  filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
-}
+// ---------- ENVELOPE click ----------
+envelopeContainer.addEventListener('click', () => {
+  if (!currentUser) {
+    loginContainer.style.display = 'flex';
+    envelopeContainer.style.display = 'none';
+    return;
+  }
 
-#envelope-container p {
-  font-size: 2rem;
-  margin: 0.2rem 0 0;
-  color: #fff9f0;
-  text-shadow: 2px 2px 0 #d64b6b;
-}
+  envelopeContainer.style.display = 'none';
 
-/* LETTER CONTAINER */
-#letter-container {
-  display: none;
-  position: fixed;
-  inset: 0;
-  justify-content: center;
-  align-items: center;
-  z-index: 15;
-}
+  const userData = users[currentUser];
+  letterTitle.textContent = `To ${currentUser}`;
+  catImg.src = 'cat_heart.gif';
+  messageDiv.textContent = userData.message;
 
-/* letter-window: no background card, just spacing */
-.letter-window {
-  width: 85vw;
-  max-width: 850px;
-  aspect-ratio: 3/2;
-  padding: 30px 30px 20px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  document.body.style.backgroundImage = `url('${userData.bg}')`;
 
-  /* 🚫 all card backgrounds removed */
-  background: transparent !important;
-  backdrop-filter: none !important;
-  border: none !important;
-  box-shadow: none !important;
-
-  transform: scale(1.2);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.letter-window.open {
-  transform: scale(1);
-  opacity: 1;
-}
-
-/* title – readable on any background */
-h1 {
-  font-size: 2.8rem;
-  margin: 0 0 5px;
-  color: white;
-  text-shadow: 3px 3px 0 #00000080, 0 0 10px black;
-  background: rgba(0, 0, 0, 0.3);  /* very subtle dark wash */
-  padding: 0.2rem 1.8rem;
-  border-radius: 60px;
-  display: inline-block;
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-/* cat gif – no extra background */
-.cat {
-  width: 170px;
-  margin: 5px 0;
-  border-radius: 100px;
-  background: transparent !important;  /* remove any background */
-  padding: 0;  /* remove padding */
-}
-
-/* message text – semi-transparent dark for readability */
-.message-text {
-  font-size: 1rem;
-  line-height: 1.5;
-  text-align: left;
-  color: white;
-  text-shadow: 2px 2px 0 #00000060;
-  background: rgba(0, 0, 0, 0.4);  /* dark, lets bg show through */
-  backdrop-filter: blur(3px);
-  padding: 1.2rem 1.8rem !important;
-  border-radius: 30px 12px 30px 12px !important;
-  max-width: 80%;
-  max-height: 200px;
-  overflow-y: auto;
-  margin: 8px 0 5px;
-  font-family: 'Courier New', monospace;
-  white-space: pre-wrap;
-  word-break: break-word;
-  border: 1px solid rgba(255,255,240,0.3);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.message-text::-webkit-scrollbar {
-  width: 8px;
-}
-.message-text::-webkit-scrollbar-thumb {
-  background: #ffb3c6;
-  border-radius: 20px;
-}
+  letterContainer.style.display = 'flex';
+  setTimeout(() => {
+    letterWindow.classList.add('open');
+  }, 20);
+});
