@@ -17,7 +17,7 @@ const users = {
     bg: "https://i.pinimg.com/736x/b4/97/09/b49709b86eb85b194f6d69c0c9e30d3d.jpg",
     message: `The smart that you conceal,\nThe brightness you refuse to oversell.\nYou wear it lightly, like it's nothing much,\nBut those who listen know your mind is such\nA gift—not forced, not flaunted, just there, still.\nAnd somehow that's what makes it more brilliant.\n\nThank you for the way you step aside\nWhen conversations drift to lows of pride.\nYou never bite the bait, you never feed\nThe hungry talk that other mouths might need.\nThat silence of yours? It speaks so loud—\nA quiet soul among a noisy crowd.\n\nBut here's the thanks that settles in my chest:\nYou've stayed. Through everything, you've stayed and blessed\nThis friendship with a presence so secure,\nA steady hand, a heart that stays demure.\nYou show respect like breathing—natural, free,\nThe kind that makes each person feel they're worthy to be seen.\n\nI met your parents once, and understood\nWhy kindness grows in you the way it should.\nNo surprise there—their warmth was simply you,\nReflected back in everything you do.\nThey raised you well, Felicity, and how—\nTheir love wears your face now.\n\nSo here's my simple prayer for all your days:\nMay God bless every exam, every grade,\nMay you succeed in ways that make you proud,\nYet still be you—the same, above the crowd.\nI'm proud of you. I'll always be.\nThank you, Felicity, for being simply... thee.`
   },
-  // UPDATED USER: Bling (new password & background)
+
   Bling: {
     code: "120907",
     bg: "https://i.pinimg.com/736x/71/ed/cf/71edcfeecbd31f973cb6267ee52dd701.jpg",
